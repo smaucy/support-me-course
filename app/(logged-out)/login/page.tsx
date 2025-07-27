@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
+import { PasswordInput } from "@/components/ui/password-input";
 
 const formSchema = z.object({
   email: z.email(),
@@ -84,11 +85,7 @@ export default function LoginPage() {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="********"
-                        type="password"
-                      />
+                      <PasswordInput {...field} placeholder="********" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -103,7 +100,7 @@ export default function LoginPage() {
         <CardFooter className="justify-between">
           <small>Don&apos;t have a account?</small>
           <Button asChild variant={"outline"} size="sm">
-            <Link href="/signup">Sign up</Link>
+            <Link href="/sign-up">Sign up</Link>
           </Button>
         </CardFooter>
       </Card>
