@@ -1,0 +1,28 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+type MenuItemProps = {
+  children: React.ReactNode;
+  href: string;
+};
+
+export default function MenuItem({ children, href }: MenuItemProps) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "block hover:bg-white dark:hover:bg-zinc-700 rounded-md text-muted-foreground p-2 hover:text-foreground",
+        isActive &&
+          "bg-primary hover:bg-primary text-foreground dark:hover:bg-primary hover:text-foreground"
+      )}
+    >
+      {children}
+    </Link>
+  );
+}
