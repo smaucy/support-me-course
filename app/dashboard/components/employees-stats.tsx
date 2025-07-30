@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { UserIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function EmployeesStats() {
   return (
@@ -14,13 +15,15 @@ export default function EmployeesStats() {
       <Card>
         <CardHeader>
           <CardTitle className="text-sm">Total employees</CardTitle>
-          <CardContent className="flex items-center justify-between">
-            <div className="flex gap-2 justify-center items-center">
-              <UserIcon />
+          <CardContent className="flex items-center justify-between p-0">
+            <div className="flex gap-2 items-center justify-between">
+              <UserIcon className="w-10 h-10" />
               <span className="text-5xl font-bold">100</span>
             </div>
             <div>
-              <Button size="sm">View</Button>
+              <Button size="xs" asChild>
+                <Link href="/dashboard/employees">View all</Link>
+              </Button>
             </div>
           </CardContent>
         </CardHeader>
