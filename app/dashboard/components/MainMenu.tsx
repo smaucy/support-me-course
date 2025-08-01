@@ -7,9 +7,6 @@ import { LightDarkToggle } from "@/components/ui/light-dark-toggle";
 export default function MainMenu() {
   return (
     <nav className="flex flex-col h-full">
-      <header className="border-b border-b-zinc-300 dark:border-b-black pb-4">
-        <MenuTitle />
-      </header>
       <ul className="py-4 grow">
         <MenuItem href="/dashboard">My dashboard</MenuItem>
         <MenuItem href="/dashboard/teams">Teams</MenuItem>
